@@ -1,5 +1,14 @@
+<div class="h5p-editor-container">
 
- <hp-editor  id='monoeditor' content-id="undefined" {{did-insert (fn this.initEditor)}} >
-</hp-editor>
+  <hp-editor class="editor-section" content-id={{this.contentId}} {{did-insert (fn this.initEditor)}} >
+  </hp-editor>
 
+  {{#if this.editorLoaded}}
+    <div class="actions-section">
+      <button type="button" class="btn btn-primary btn-save-h5p"
+        {{on "click" this.saveContent}}>Save H5P content
+      </button>
+    </div>
+  {{/if}}
 
+</div>
