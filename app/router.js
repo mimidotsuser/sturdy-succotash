@@ -13,7 +13,7 @@ Router.map(function () {
 
   this.route('teach', function () {
     this.route('create');
-    this.route('edit');
+    this.route('edit',{path:'/:chapter_id'});
   });
 
 });

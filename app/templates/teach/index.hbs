@@ -1,6 +1,11 @@
-<ul>
+<h5 class="display-4">Select H5P content to edit</h5>
+
+<ol type="1">
+
+  {{#each this.model.data as |chapter|}}
   <li>
-    <LinkTo @route="teach.create">Create new chapter</LinkTo>
-    <LinkTo @route="teach.edit">Edit chapter one</LinkTo>
+    <LinkTo @route="teach.edit" @model={{chapter.id}}>Edit {{chapter.title}}</LinkTo>
+
   </li>
-</ul>
+    {{/each}}
+</ol>
