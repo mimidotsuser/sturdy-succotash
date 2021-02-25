@@ -1,8 +1,9 @@
-All chapters
-
-<ul>
+Available uploaded content
+<ol type="1">
   <li>
-    <Chapter::PreviewCard>
-    </Chapter::PreviewCard>
+    {{#each this.model.data as |chapter|}}
+    <Chapter::PreviewCard @chapter={{chapter}}>
+     </Chapter::PreviewCard>
+    {{/each}}
   </li>
-</ul>
+</ol>

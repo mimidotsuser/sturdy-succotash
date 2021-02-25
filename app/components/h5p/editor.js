@@ -15,7 +15,6 @@ export default class H5pEditorComponent extends Component {
 
   constructor(owner, args) {
     super(owner, args);
-    console.log(this.contentId)
     if (!window.customElements.get('hp-editor')) {
       window.customElements.define('hp-editor', H5PEditorComponent);
     }
