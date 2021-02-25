@@ -13,6 +13,9 @@ export default class H5pEditorComponent extends Component {
   @tracked
   contentId = this.args.contentId || 'new';
 
+  @tracked
+  loading = false;
+
   constructor(owner, args) {
     super(owner, args);
     if (!window.customElements.get('hp-editor')) {
@@ -44,6 +47,9 @@ export default class H5pEditorComponent extends Component {
         .then((res) => res.json())
     }
 
+    element.addEventListener('editorloaded', () => {
+      this.loading = false;
+    })
   }
 
   @action
@@ -64,8 +70,4 @@ export default class H5pEditorComponent extends Component {
       })
   }
 
-  get editorLoaded() {
-    console.log('editor loaded', this.editor)
-    return this.editor !== undefined;
-  }
 }
