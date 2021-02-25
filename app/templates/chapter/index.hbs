@@ -1,9 +1,10 @@
-Available uploaded content
-<ol type="1">
-  <li>
+<p class="display-6">Available H5P content</p>
+
+<div class="row">
+  <div class="col-5">
     {{#each this.model.data as |chapter|}}
     <Chapter::PreviewCard @chapter={{chapter}}>
      </Chapter::PreviewCard>
     {{/each}}
-  </li>
-</ol>
+  </div>
+</div>

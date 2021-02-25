@@ -1,10 +1,11 @@
-<ul>
-  <li>
-    <LinkTo @route="chapter">Home</LinkTo>
+<ul class="nav border-bottom">
+  <li class="nav-item">
+    <LinkTo @route="chapter" class="nav-link">Home</LinkTo>
   </li>
-  <li>
-    <LinkTo @route="teach">Teach</LinkTo>
+  <li class="nav-item">
+    <LinkTo @route="teach" class="nav-link">Teach</LinkTo>
   </li>
 </ul>
-
-{{outlet}}
+<div class="container">
+  {{outlet}}
+</div>
