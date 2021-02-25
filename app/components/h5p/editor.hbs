@@ -3,10 +3,14 @@
   <hp-editor class="editor-section" content-id={{this.contentId}} {{did-insert (fn this.initEditor)}} >
   </hp-editor>
 
-  {{#if this.editorLoaded}}
-    <div class="actions-section">
+  {{#if this.loading}}
+    <div class="actions-section pt-2 pb-4 d-flex">
       <button type="button" class="btn btn-primary btn-save-h5p"
-        {{on "click" this.saveContent}}>Save H5P content
+        {{on "click" this.saveContent}}>Save content
+      </button>
+
+      <button type="button" class="btn btn-outline-danger btn-delete-h5p ml2"
+        {{on "click" this.deleteContent}}>Delete content
       </button>
     </div>
   {{/if}}

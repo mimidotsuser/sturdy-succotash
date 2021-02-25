@@ -26,6 +26,10 @@ export default class H5pEditorComponent extends Component {
 
   @action
   initEditor(element) {
+    element.addEventListener('editorloaded', () => {
+      this.loading = true;
+    })
+
     element.loadContentCallback = async (contentId) => {
       return await fetch(contentId ? `/h5p-editor/${contentId}` : '/h5p-editor')
         .then((res) => res.json())
@@ -47,9 +51,6 @@ export default class H5pEditorComponent extends Component {
         .then((res) => res.json())
     }
 
-    element.addEventListener('editorloaded', () => {
-      this.loading = false;
-    })
   }
 
   @action
@@ -70,4 +71,12 @@ export default class H5pEditorComponent extends Component {
       })
   }
 
+  @action
+  async deleteContent() {
+    if (!this.editor) {
+      return;
+    }
+
+    await fetch(`/h5p/content/${this.editor.contentId}`, {method: 'DELETE'})
+  }
 }
